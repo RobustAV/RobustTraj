@@ -1,1 +1,413 @@
-RobustTraj
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+    body {
+        font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+        font-size: 17px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 980px;
+    }
+
+    h1 {
+        font-weight: 300;
+        line-height: 1.15em;
+    }
+
+    h2 {
+        font-size: 1.75em;
+    }
+
+    a:link, a:visited {
+        color: #48b64e;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #208799;
+    }
+
+    h1, h2, h3 {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-weight: 400;
+        margin: 16px 0px 4px 0px;
+    }
+
+    .paper-title {
+        padding: 16px 0px 16px 0px;
+    }
+
+    section {
+        margin: 32px 0px 32px 0px;
+        text-align: justify;
+        clear: both;
+    }
+
+    .col-5 {
+        width: 20%;
+        float: left;
+    }
+
+    .col-4 {
+        width: 25%;
+        float: left;
+    }
+
+    .col-3 {
+        width: 33%;
+        float: left;
+    }
+
+    .col-2 {
+        width: 50%;
+        float: left;
+    }
+
+    .col-1 {
+        width: 100%;
+        float: left;
+    }
+
+    .row, .author-row, .affil-row {
+        overflow: auto;
+    }
+
+    .author-row, .affil-row {
+        font-size: 26px;
+    }
+
+    .row {
+        margin: 16px 0px 16px 0px;
+    }
+
+    .authors {
+        font-size: 26px;
+    }
+
+    .affil-row {
+        margin-top: 16px;
+    }
+
+    .teaser {
+        max-width: 100%;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .screenshot {
+        width: 256px;
+        border: 1px solid #ddd;
+    }
+
+    .screenshot-el {
+        margin-bottom: 16px;
+    }
+
+    hr {
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #ddd;
+        margin: 0;
+    }
+
+    .material-icons {
+        vertical-align: -6px;
+    }
+
+    p {
+        line-height: 1.25em;
+    }
+
+    .caption {
+        font-size: 16px;
+        /*font-style: italic;*/
+        color: #666;
+        text-align: center;
+        margin-top: 4px;
+        margin-bottom: 10px;
+    }
+
+    video {
+        display: block;
+        margin: auto;
+    }
+
+    figure {
+        display: block;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #bibtex pre {
+        font-size: 13.5px;
+        background-color: #eee;
+        padding: 16px;
+    }
+
+    .blue {
+        color: #2c82c9;
+        font-weight: bold;
+    }
+
+    .orange {
+        color: #d35400;
+        font-weight: bold;
+    }
+
+    .flex-row {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .paper-btn {
+        position: relative;
+        text-align: center;
+
+        display: inline-block;
+        margin: 8px;
+        padding: 8px 8px;
+
+        border-width: 0;
+        outline: none;
+        border-radius: 2px;
+
+        background-color: #48b64e;
+        color: white !important;
+        font-size: 20px;
+        width: 100px;
+        font-weight: 600;
+    }
+
+    .paper-btn-parent {
+        display: flex;
+        justify-content: center;
+        margin: 16px 0px;
+    }
+
+    .paper-btn:hover {
+        opacity: 0.85;
+    }
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .venue {
+        /*color: #B6486F;*/
+        font-size: 30px;
+
+    }
+
+</style>
+
+<!-- End : Google Analytics Code-->
+<script type="text/javascript" src="../js/hidebib.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic'
+      rel='stylesheet' type='text/css'>
+<head>
+    <title>AdvDO: Realistic Adversarial Attacks for Trajectory Prediction</title>
+    <meta property="og:description" content="Robust Trajectory Prediction against Adversarial Attacks"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <!-- <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@ArashVahdat">
+    <meta name="twitter:title" content="Diffusion Models for Adversarial Purification">
+    <meta name="twitter:description"
+          content="We propose <i>DiffPure</i> that uses diffusion models for adversarial purification.">
+    <meta name="twitter:image" content=""> -->
+</head>
+
+<body>
+<div class="container">
+    <div class="paper-title">
+        <h1>Robust Trajectory Prediction against Adversarial Attacks</h1>
+    </div>
+
+    <div id="authors">
+        <center>
+            <div class="author-row">
+                <div class="col-3 text-center"><a href="https://kikacaty.github.io/">Yulong Cao</a><sup>1,2</sup></div>
+                <div class="col-3 text-center"><a href="https://faculty.cc.gatech.edu/~danfei/">Danfei Xu</a><sup>2</sup></div>
+                <div class="col-3 text-center"><a href="https://xinshuoweng.com/">Xinshuo Weng</a><sup>2</sup></div>
+                <div class="col-3 text-center"><a href="https://web.eecs.umich.edu/~zmao/">Z. Morley Mao</a><sup>1</sup></div>
+                <div class="col-3 text-center"><a href="https://tensorlab.cms.caltech.edu/users/anima/">Anima Anandkumar</a><sup>2,3</sup></div>
+                <div class="col-3 text-center"><a href="https://xiaocw11.github.io/">Chaowei Xiao</a><sup>2</sup></div>
+                <div class="col-3 text-center"><a href="https://web.stanford.edu/~pavone/">Marco Pavone</a><sup>2,4</sup></div>
+            </div>
+
+            <center>
+                <table align=center width=500px>
+                    <tr>
+                        <td align=center width=200px>
+                            <center>
+                                <span style="font-size:20px"><sup>1</sup> Umich</span>
+                            </center>
+                        </td>
+                        <td align=center width=200px>
+                            <center>
+                                <span style="font-size:20px"><sup>2</sup> NVIDIA</span>
+                            </center>
+                        </td>
+                        <td align=center width=200px>
+                            <center>
+                                <span style="font-size:20px"><sup>3</sup> Caltech</span>
+                            </center>
+                        </td>
+                        <td align=center width=200px>
+                            <center>
+                                <span style="font-size:20px"><sup>4</sup> Stanford</span>
+                            </center>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+
+        </center>
+        <br>
+        <center><img width="20%" src="./assets/nvidialogo.png" style="margin-top: 20px; margin-bottom: 3px;"></center>
+        <!--        <div class="affil-row">-->
+        <!--            <div class="venue text-center"><b>ICLR 2022 (spotlight)</b></div>-->
+        <!--        </div>-->
+        <br>
+        <div style="clear: both">
+            <div class="paper-btn-parent">
+                <!-- <a class="paper-btn" href="https://arxiv.org/pdf/2205.07460.pdf">
+                    <span class="material-icons"> description </span>
+                    Paper
+                </a> -->
+                <a class="paper-btn" href="https://github.com/kikacaty/RobustTraj">
+                    <span class="material-icons"> code </span>
+                    Code
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <section id="abstract"/>
+    <h2>Abstract</h2>
+    <hr>
+    <div class="flex-row">
+        <p>
+            Trajectory prediction using deep neural networks (DNNs) is an essential component of autonomous driving (AD) systems.  However, these methods are vulnerable to adversarial attacks, leading to serious consequences such as collisions. In this work, we identify two key ingredients to defend trajectory prediction models against adversarial attacks including (1) designing effective adversarial training methods and (2) adding domain-specific data augmentation to mitigate the performance degradation on clean data. We demonstrate that our method is able to improve the performance by 46% on adversarial data and at the cost of only 3% performance degradation on clean data, compared to the model trained with clean data. Additionally, compared to existing robust methods, our method can improve performance by 21% on adversarial examples and 9% on clean data. Our robust model is evaluated with a planner to study its downstream impacts. We demonstrate that our model can significantly reduce the severe accident rates (e.g., collisions and off-road driving).
+        </p>
+    </div>
+    </section>
+
+
+    <section id="teaser-image">
+        </p>
+        <figure style="margin-top: 20px; margin-bottom: 20px;">
+            <center><img width="70%" src="./assets/robust_pred_overview.png" style="margin-bottom: 20px;"></center>
+            <p class="caption">
+                We consider two essential properties of modern prediction models: (1) motion property, which captures the influence of past agent states over future states; and (2) social property, which captures how the state of each agent affects others.  As illustrated in the Figure, by only manipulating the history trajectory of the adversarial agent, we are able to mislead the predicted future trajectory for the adversarial agent (i.e. incorrect prediction for left turning future trajectory of red car). Furthermore, we are able to mislead the prediction for other agent’s behavior (i.e. turning  right to turning left for the yellow car). 
+            </p>
+            <p class="caption">
+            </p>
+        </figure>
+    </section>
+
+    </section>
+
+    <section id="novelties"/>
+    <h2>AdvDO Overview</h2>
+    <hr>
+    <div class="flex-row">
+        <p>In this work, we propose AdvDO (Adversarial Dynamic Optimization) for generating effective and realistic adversarial trajectories against trajectory prediction models.
+        </p>
+    </div>
+    <figure style="width: 100%">
+        <center><img width="65%" src="assets/advdo_overview.png"></center>
+        <!-- <p class="caption" style="margin-bottom: 24px;">
+            The first column shows adversarial examples produced by attacking attribute classifiers using
+            PGD &#120001<sub>&#8734</sub> (&#949=16/255). Our method purifies the adversarial examples by first diffusing 
+            them up to the timestep t=0.3, following the forward diffusion process, and then, it removes perturbations 
+            using the reverse generative SDE. The middle three columns show the intermediate results of solving the 
+            reverse SDE in DiffPure at different timesteps. We observe that the purified images at t=0 match the clean images (last column).
+        </p> -->
+    </figure>
+    </section>
+
+
+    <section id="results">
+        <h2>Attack Demo</h2>
+        <hr>
+        <div class="flex-row">
+            <p>
+                We demonstrate that with the generated adversarial trajectories, down stream tasks like planning will be significantly affected. Down below we demonstrate the collision consequences with Carla simulation.
+            </p>
+            <iframe src="https://drive.google.com/file/d/1qB-vBjqqhws6HoC2fpVkqP0_slUjPTrA/preview" width="640" height="480" allow="autoplay"></iframe>
+        </div>    
+        <h2>Realistic Trajectory Generation</h2>
+        <hr>
+        <div class="flex-row">
+            <p>
+                Down below, we show that the adversarial trajectory generated from search has either behavior change or unrealistic steering rates while trajectory generated from AdvDO is more realistic.
+            </p>
+        </div>
+    </section>
+
+    <section id="paper">
+        <h2>Paper</h2>
+        <hr>
+        <div class="flex-row">
+            <div style="box-sizing: border-box; padding: 16px; margin: auto;">
+                <a href=""><img class="screenshot" src="assets/diffusion_purification_preview.jpg"></a>
+            </div>
+            <div style="width: 50%; font-size: 20px;">
+                <p><b>AdvDO: Realistic Adversarial Attacks for Trajectory Prediction</b></p>
+                <p>Yulong Cao, Chaowei Xiao, Anima Anankuda, Danfei Xu and Marco Pavone</p>
+                <!--                <p><i>* Work done during an internship at NVIDIA.</i></p>-->
+                <!-- <div><span class="material-icons"> description </span><a href="https://arxiv.org/abs/2205.07460"> arXiv version</a></div> -->
+                <div><span class="material-icons"> insert_comment </span><a href="assets/cao2022advdo.bib">
+                    BibTeX</a>
+                </div>
+                <div><span class="material-icons"> integration_instructions </span><a
+                        href="https://github.com/kikacaty/AdvDO"> Code</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bibtex">
+        <h2>Citation</h2>
+        <hr>
+        <pre><code>inproceedings{cao2022advdo,
+
+          title={AdvDO: Realistic Adversarial Attacks for Trajectory Prediction},
+        
+          author={Yulong Cao, Chaowei Xiao, Anima Anankuda, Danfei Xu and Marco Pavone},
+        
+          booktitle={European conference on computer vision (ECCV)},
+        
+          year={2022},
+        
+          organization={Springer}
+        
+        }
+}</code></pre>
+    </section>
+</div>
+</body>
+</html>
+
